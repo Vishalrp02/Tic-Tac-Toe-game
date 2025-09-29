@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #f9fafb, #e2e8f0);
+      }
+
+      .game-container {
+        background: #ffffffd9;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 360px;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        color: #1e293b;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 10px;
+        margin: 1.5rem auto;
+      }
+
+      .cell {
+        background: #f8fafc;
+        border: 2px solid #cbd5e1;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #0f172a;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .cell:hover {
+        background: #e2e8f0;
+        transform: scale(0.96);
+      }
+
+      .cell.taken {
+        cursor: not-allowed;
+        background: #e2e8f0;
+      }
+
+      .info {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: #475569;
+      }
+
+      .reset-btn {
+        margin-top: 1.5rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .reset-btn:hover {
+        background: #1d4ed8;
+      }
+
+      @media (max-width: 420px) {
+        .board {
+          grid-template-columns: repeat(3, 80px);
+          grid-template-rows: repeat(3, 80px);
+          gap: 8px;
+        }
+        .cell {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Tic Tac Toe</h1>
+      <div class="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+      <div class="info">Player X's turn</div>
+      <button class="reset-btn">Reset Game</button>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
